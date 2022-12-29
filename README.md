@@ -21,9 +21,9 @@ Optional:
 Firstly, make sure you have all the environment variables in the 'config.env' file(See an example below in the next section).
 
 ```bash
-$ git clone
+$ git clone https://github.com/EzeSandes/ChatGPT-OpenAI-TelegramBot.git
 
-$ cd
+$ cd ChatGPT-OpenAI-Telegram-Bot
 
 $ npm i
 
