@@ -1,4 +1,5 @@
 import { api } from '../server.js';
+import catchAsync from '../utils/catchAsync.js';
 
 let conversation = null;
 
@@ -16,7 +17,7 @@ async function ask(question) {
   return conversation.response;
 }
 
-export default async function askHandler(ctx) {
+export default catchAsync(async function askHandler(ctx) {
   if (ctx.message.from.is_bot) return false;
 
   const words = ctx.message.text.split(' ');
@@ -28,17 +29,13 @@ export default async function askHandler(ctx) {
   if (question.length == 0)
     return await ctx.reply('Sorry! Please type something after /ask');
 
-  console.log(question);
+  // console.log(question);
 
   ctx.sendChatAction('typing');
 
-  try {
-    const response = await ask(question);
+  const response = await ask(question);
 
-    ctx.reply(response, {
-      reply_to_message_id: ctx.message.message_id,
-    });
-  } catch (error) {
-    console.log(error);
-  }
-}
+  ctx.reply(response, {
+    reply_to_message_id: ctx.message.message_id,
+  });
+});
