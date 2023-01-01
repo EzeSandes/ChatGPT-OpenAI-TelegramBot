@@ -37,6 +37,8 @@ Note: Use Google Chrome to avoid errors.
 
 ## Environment Variables
 
+You have to store your keys in a file called "config.env" in the root folder. If you want to keep them under a different name, in "server.js" you'll also need to rename the .env file.
+
 Example(See `env.example`):
 
 ```
