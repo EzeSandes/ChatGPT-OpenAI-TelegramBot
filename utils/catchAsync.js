@@ -1,7 +1,7 @@
+import errorHandler from '../handlers/errorHandler.js';
+
 export default fn => {
   return ctx => {
-    fn(ctx).catch(error => {
-      console.log(error);
-    });
+    fn(ctx).catch(errorHandler);
   };
 };
