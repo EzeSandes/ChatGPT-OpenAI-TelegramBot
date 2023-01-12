@@ -31,8 +31,6 @@ export default catchAsync(async function askHandler(ctx) {
   if (question.length == 0)
     throw new BotError('Sorry! Please type something after /ask', '/ask', ctx);
 
-  // console.log(question);
-
   ctx.sendChatAction('typing');
 
   const response = await ask(question);

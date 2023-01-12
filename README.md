@@ -55,6 +55,24 @@ OPENAI_PASSWORD=<your password from your openai account>
 
 As I said before, I'll constantly be adding new commands in the future, but if you have recommendations, be free to share them!
 
+**Note:** The bot can follow different lines of conversation by responding to the command of the conversation you want to follow.
+
+e.g.
+
+```bash
+user: /ask Tell me a joke.
+
+bot: Yes, sure! Here it is ...
+
+user: /en_improver How can I say ... ?
+
+bot: First, you can say ... instead of ...
+
+user: /ask Tell me a different joke.
+
+bot: Here it's another one ...
+```
+
 ---
 
 `/start`
@@ -63,6 +81,16 @@ Message of welcome.
 
 ```bash
 /start
+```
+
+---
+
+`/help`
+
+Display a list of the different available commands on the bot chat.
+
+```bash
+/help
 ```
 
 ---
@@ -77,10 +105,12 @@ Ask different questions to the bot to answer it. The bot has the capacity to rem
 
 ---
 
-`/help`
+`/en_improver`
 
-Display a list of the different available commands on the bot chat.
+You can have a conversation with the bot to improve your English. The bot will automatically correct you if you make a mistake and suggest new vocabulary to improve your text.
 
 ```bash
-/help
+/en_improver I'm so happy!
+
+bot: I am overjoyed!
 ```
